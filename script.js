@@ -1,12 +1,12 @@
-// Gráfico de Linhas
+// Gráfico de Linhas - Vendas de Celulares
 const lineChartContext = document.getElementById('lineChart').getContext('2d');
 const lineChart = new Chart(lineChartContext, {
     type: 'line',
     data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'], // Meses
         datasets: [{
-            label: 'Vendas',
-            data: [10, 20, 30, 40, 50],
+            label: 'Unidades Vendidas',
+            data: [1500, 2000, 2500, 3000, 3500], // Vendas em unidades de celulares
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1
@@ -15,21 +15,24 @@ const lineChart = new Chart(lineChartContext, {
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 500 // Definindo um passo de 500 unidades para o eixo Y
+                }
             }
         }
     }
 });
 
-// Gráfico de Barras
+// Gráfico de Barras - Clientes por Modelo de Celular
 const barChartContext = document.getElementById('barChart').getContext('2d');
 const barChart = new Chart(barChartContext, {
     type: 'bar',
     data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+        labels: ['Modelo A', 'Modelo B', 'Modelo C', 'Modelo D', 'Modelo E'], // Modelos de celular
         datasets: [{
-            label: 'Clientes',
-            data: [15, 25, 35, 45, 55],
+            label: 'Clientes (em número de vendas)',
+            data: [800, 1200, 1500, 1800, 2200], // Quantidade de clientes por modelo de celular
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -50,7 +53,10 @@ const barChart = new Chart(barChartContext, {
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 500 // Definindo um passo de 500 para o eixo Y
+                }
             }
         }
     }
